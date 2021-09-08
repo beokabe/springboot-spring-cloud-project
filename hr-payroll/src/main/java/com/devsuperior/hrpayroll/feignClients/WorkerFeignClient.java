@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 
 @Component
 @FeignClient(name = "hr-worker", path = "/workers")
+//A descoberta para consumir os serviços da payroll são realizadas apenas pelo nome, por meio do feign e do eureka server
 public interface WorkerFeignClient {
 
     @GetMapping(value = "/{id}")
