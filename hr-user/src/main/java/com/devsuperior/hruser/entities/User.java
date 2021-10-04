@@ -1,4 +1,4 @@
-package entities;
+package com.devsuperior.hruser.entities;
 
 import javax.persistence.*;
 import java.io.Serializable;
@@ -15,6 +15,8 @@ public class User implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String name;
+
+    @Column(unique = true)
     private String email;
     private String password;
 
@@ -26,7 +28,6 @@ public class User implements Serializable {
     private Set<Role> roles = new HashSet<>();
 
     public User() {
-
     }
 
     public User(Long id, String name, String email, String password) {

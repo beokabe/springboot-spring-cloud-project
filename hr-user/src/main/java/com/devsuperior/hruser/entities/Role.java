@@ -1,4 +1,4 @@
-package entities;
+package com.devsuperior.hruser.entities;
 
 import javax.persistence.*;
 import java.io.Serializable;
@@ -15,7 +15,6 @@ public class Role implements Serializable {
     private String roleName;
 
     public Role() {
-
     }
 
     public Role(Long id, String roleName) {
@@ -44,11 +43,11 @@ public class Role implements Serializable {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Role role = (Role) o;
-        return Objects.equals(roleName, role.roleName);
+        return Objects.equals(id, role.id);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(roleName);
+        return Objects.hash(id);
     }
 }
